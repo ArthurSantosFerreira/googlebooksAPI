@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Livros Charles Bukowski Usando Google Books API</title>
+  </head>
+  <body>
+	  <h1>Livros Charles Bukowski</h1>
+    <div id="content"></div>
+    <script>
+      function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+		  		  
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=charles+bukowski&callback=handleResponse"></script>
+  </body>
+</html>
